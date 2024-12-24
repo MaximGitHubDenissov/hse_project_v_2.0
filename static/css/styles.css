@@ -1,0 +1,91 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  } 
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer {
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+    text-align: center;
+  } 
+
+#logo{
+width: 75px;
+height: 50px;}
+
+
+.login-div {
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#login-card{
+    margin-top: 75px;
+}
+
+#welcome {
+  text-align: center;
+  margin-top: 100px;
+}
+
+h2, h4{
+  text-align: center;
+}
+
+#select {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.driver-field{
+  width: 127px;
+}
+
+select.select2-hidden-accessible {
+  display: none !important; /* Скрыть нативный select */
+}
+
+.select2-container--default .select2-selection--single {
+  border: 1px solid; 
+  height: 25px;
+}
+
+.select2-container--default .select2-search__field {
+  margin-top: 3px;
+  width: 127px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+  padding-bottom: 10px;
+}
+
+.table{
+font-size: .70rem;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px; /* Размер круга */
+  height: 20px; /* Размер круга */
+  background-color: green; /* Цвет фона */
+  color: white; /* Цвет текста */
+  font-size: 10px; /* Размер текста */
+  font-weight: bold; /* Толщина текста */
+  border-radius: 50%; /* Скругление для создания круга */
+  border: 2px solid darkgreen; /* Опциональная граница */
+}
+
+td.critical {
+  background-color: red;
+}
+
+td.correction {
+  background-color: orange;
+}

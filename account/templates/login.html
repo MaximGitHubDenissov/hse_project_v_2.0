@@ -1,0 +1,35 @@
+{% extends 'base.html' %} 
+{% block content %}
+{% if messages %}
+        	{% for message in messages %}
+          	<div class="alert alert-{{ message.tags }}">
+            	{{ message }}
+          	</div>
+        	{% endfor %}
+{% endif %}
+<div class="container content" id="login-card">
+  {% load i18n %}
+  <div class="mx-auto" style="width: 300px">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">{% trans 'Log in to your account'%}</h4>
+
+        <form method="post" novalidate>
+          {% csrf_token %}{% load crispy_forms_tags %}
+          <input type="hidden" name="next" value="{{ next }}" />
+
+          {{ form|crispy }}
+
+          <button type="submit" class="btn btn-primary btn-block mb-4">
+            {% trans 'Log in' %}
+          </button>
+        </form>
+        <div class="border-top pt-3 mb-4">
+          <small class="text-muted"> {% trans 'Need an account?' %} </small>
+          <a href="{% url 'register' %}">{% trans 'Registration' %}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

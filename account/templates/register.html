@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block content %}
+<div class="mx-auto" style="width: 75%">
+    {% load i18n %}
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">{% trans 'Please create your account' %}</h4>
+
+            <form method="post" novalidate>
+                {% csrf_token %}
+                
+                {% load crispy_forms_tags %}
+                {{ form|crispy }}
+
+                <!-- Добавляем требования к паролю под полем пароля -->
+                <div class="border-top pt-3 mb-4">
+                    <small class="form-text text-muted">
+                        {% trans 'The password must be at least 8 characters long and contain letters, numbers and special characters.' %}
+                    </small>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block mb-4">
+                    {% trans 'Create account' %}
+                  </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<!-- #TODO нужно добавить сообщение о том, что пользователь успешно зарегистрировался -->

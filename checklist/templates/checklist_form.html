@@ -1,0 +1,327 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %} 
+
+
+
+{% block content %}
+
+{% block heading %}
+<h1 class="text-center">{% trans 'Vehicle checklist' %} </h1>
+{% endblock %}
+<form method="post">
+    {% csrf_token %}
+    <div class="container mr-5">
+    <div class="form-control">
+      <div class="row">
+        <div class="col col-6 mb-1">{{form.date.label_tag}} </div>
+        <div class="col col-6 mb-3">{{form.date}}</div>
+        <div class="col col-6 mb-1">{{form.driver.label_tag}}</div>
+        <div class="col col-6 mb-3">{{form.driver}}</div>
+        <div class="col col-6 mb-1">{{form.car.label_tag}} </div>
+        <div class="col col-6 mb-1">{{form.car}}</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="table">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>No.</th>
+                    <th>{% trans 'Responsible elements and requirements' %}</th>
+                    <th>{% trans 'Conformity' %}</th>
+                    <th>{% trans 'Comments' %}</th>
+                </tr>
+            </thead>
+            <tr>
+              <td>
+                <div class="circle">1</div>
+              </td>
+              <td class="table-info" colspan="3">{% trans 'Fluid levels' %}</td>
+            </tr>
+            <tr>
+                <td>1.1</td>
+                <td>{% trans 'Fuel' %}</td>
+                <td>{{form.fuel_mark}}</td>
+                <td>{{form.fuel_comment}}</td>
+               
+            </tr>
+            <tr>
+              <td>1.2</td>
+              <td>{% trans 'Oil' %}</td>
+              <td>{{form.oil_mark}}</td>
+              <td>{{form.oil_comment}}</td>
+
+            </tr>
+            <tr>
+              <td class="critical">1.3</td>
+              <td>{% trans 'Brake fluid, air system tightness' %}</td>
+              <td>{{form.brake_fluid_mark}}</td>
+              <td>{{form.brake_fluid_comment}}</td>
+            </tr>
+            <tr>
+              <td>1.4</td>
+              <td>{% trans 'Coolant' %}</td>
+              <td>{{form.cooling_fluid_mark}}</td>
+              <td>{{form.cooling_fluid_comment}}</td>
+            </tr>
+            <tr>
+              <td>1.5</td>
+              <td>{% trans 'Fluid in windshield washer reservoir' %}</td>
+              <td>{{form.windshield_fluid_mark}}</td>
+              <td>{{form.windshield_fluid_comment}}</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="circle">2</div>
+              </td>
+              <td class="table-info" colspan="3">{% trans 'Lanterns, headlights' %}</td>
+            </tr>
+            <tr>
+              <tr>
+                <td class="critical">2.1</td>
+                <td>{% trans 'Headlights' %}</td>
+                <td>{{form.headlights_mark}}</td>
+                <td>{{form.headlights_comment}}</td>
+              </tr>
+              <tr>
+                <td class="critical">2.2</td>
+                <td>{% trans 'Reversing lights, hazard lights' %}</td>
+                <td>{{form.reversing_lights_mark}}</td>
+                <td>{{form.reversing_lights_comment}}</td>
+              </tr>
+              <tr>
+                <td class="critical">2.3</td>
+                <td>{% trans 'Turn signals and brake lights' %}</td>
+                <td>{{form.turn_and_stop_lights_mark}}</td>
+                <td>{{form.turn_and_stop_lights_comment}}</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="circle">3</div>
+                </td>
+                <td class="table-info" colspan="3">{% trans 'Mechanical and electrical equipment' %}</td>
+              </tr>
+              <tr>
+                <tr>
+                  <td class="critical">3.1</td>
+                  <td>{% trans 'Steering' %}</td>
+                  <td>{{form.steering_mark}}</td>
+                  <td>{{form.steering_comment}}</td>
+                </tr>
+                <tr>
+                  <td class="critical">3.2</td>
+                  <td>{% trans 'Clutch' %}</td>
+                  <td>{{form.clutch_mark}}</td>
+                  <td>{{form.clutch_comment}}</td>
+                </tr>
+                <tr>
+                  <td class="critical">3.3</td>
+                  <td>{% trans 'Brakes, parking brake' %}</td>
+                  <td>{{form.brake_mark}}</td>
+                  <td>{{form.brake_comment}}</td>
+                </tr>
+                <tr>
+                  <td>3.4</td>
+                  <td>{% trans 'Monitoring and control devices' %}</td>
+                  <td>{{form.monitoring_devices_mark}}</td>
+                  <td>{{form.monitoring_devices_comment}}</td>
+                </tr>
+                <tr>
+                  <td>3.5</td>
+                  <td>{% trans 'Heater, air conditioner - if available' %}</td>
+                  <td>{{form.heater_conditioner_mark}}</td>
+                  <td>{{form.heater_conditioner_comment}}</td>
+                </tr>
+                <tr>
+                  <td class="correction">3.6</td>
+                  <td>{% trans 'Windshield wipers' %}</td>
+                  <td>{{form.wipers_mark}}</td>
+                  <td>{{form.wipers_comment}}</td>
+                </tr>
+                <tr>
+                  <td class="correction">3.7</td>
+                  <td>{% trans 'Beep' %}</td>
+                  <td>{{form.beep_mark}}</td>
+                  <td>{{form.beep_comment}}</td>
+                </tr>
+                <tr>
+                  <td>3.8</td>
+                  <td>{% trans 'Reverse signal (for trucks and special vehicles, Gazelle)' %}</td>
+                  <td>{{form.reverse_signal_mark}}</td>
+                  <td>{{form.reverse_signal_comment}}</td>
+                </tr>
+                <tr>
+                  <td>3.9</td>
+                  <td>{% trans 'Availability and functionality of GPS equipment' %}</td>
+                  <td>{{form.gps_mark}}</td>
+                  <td>{{form.gps_comment}}</td>
+                </tr>
+                <tr>
+                  <td>3.10</td>
+                  <td>{% trans 'Availability and functionality of the DVR' %}</td>
+                  <td>{{form.dvr_mark}}</td>
+                  <td>{{form.dvr_comment}}</td>
+                </tr>
+                <tr>
+                  <td>3.11</td>
+                  <td>{% trans 'Battery' %}</td>
+                  <td>{{form.battery_mark}}</td>
+                  <td>{{form.battery_comment}}</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="circle">4</div>
+                  </td>
+                  <td class="table-info" colspan="3">{% trans 'Purity and integrity' %}</td>
+                </tr>
+                <tr>
+                  <td>4.1</td>
+                  <td>{% trans 'Inside and outside' %}</td>
+                  <td>{{form.inside_outside_mark}}</td>
+                  <td>{{form.inside_outside_comment}}</td>
+                </tr>
+                <tr>
+                  <td>4.2</td>
+                  <td>{% trans 'All mirrors and glass' %}</td>
+                  <td>{{form.mirrors_mark}}</td>
+                  <td>{{form.mirrors_comment}}</td>
+                </tr>
+                <tr>
+                  <td class="critical">4.3</td>
+                  <td>{% trans 'Seat belts' %}</td>
+                  <td>{{form.seat_belts_mark}}</td>
+                  <td>{{form.seat_belts_comment}}</td>
+                </tr>
+                <tr>
+                  <td class="critical">4.4</td>
+                  <td>{% trans 'Tire condition and pressure' %}</td>
+                  <td>{{form.tires_mark}}</td>
+                  <td>{{form.tires_comment}}</td>
+                </tr>
+                <tr>
+                  <td class="critical">4.5</td>
+                  <td>{% trans 'There are no cracks on the disc' %}</td>
+                  <td>{{form.discs_mark}}</td>
+                  <td>{{form.discs_comment}}</td>
+                </tr>
+                <tr>
+                  <td>4.6</td>
+                  <td>{% trans 'State license plates' %}</td>
+                  <td>{{form.number_plate_mark}}</td>
+                  <td>{{form.number_plate_comment}}</td>
+                </tr>
+                <tr>
+                  <td class="critical">4.7</td>
+                  <td>{% trans 'Tightening the wheel nuts' %}</td>
+                  <td>{{form.wheel_nuts_mark}}</td>
+                  <td>{{form.wheel_nuts_comment}}</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="circle">5</div>
+                  </td>
+                  <td class="table-info" colspan="3">{% trans 'Auxiliary equipment in the vehicle' %}</td>
+                </tr>
+                <tr>
+                  <td class="correction">5.1</td>
+                  <td>{% trans 'Fire extinguisher(s)' %}</td>
+                  <td>{{form.fire_extinguisher_mark}}</td>
+                  <td>{{form.fire_extinguisher_comment}}</td>
+                </tr>
+                <tr>
+                  <td class="correction">5.2</td>
+                  <td>{% trans 'Availability of a first aid kit (sealed)' %}</td>
+                  <td>{{form.first_aid_kit_mark}}</td>
+                  <td>{{form.first_aid_kit_comment}}</td>
+                </tr>
+                <tr>
+                  <td>5.3</td>
+                  <td>{% trans 'Tools, wheel wrench, jack' %}</td>
+                  <td>{{form.tools_mark}}</td>
+                  <td>{{form.tools_comment}}</td>
+                </tr>
+                <tr>
+                  <td>5.4</td>
+                  <td>{% trans 'Spare wheel' %}</td>
+                  <td>{{form.spare_wheel_mark}}</td>
+                  <td>{{form.spare_wheel_comment}}</td>
+                </tr>
+                <tr>
+                  <td class="correction">5.5</td>
+                  <td>{% trans 'Warning triangle' %}</td>
+                  <td>{{form.warning_triangel_mark}}</td>
+                  <td>{{form.warning_triangel_comment}}</td>
+                </tr>
+                <tr>
+                  <td class="correction">5.6</td>
+                  <td>{% trans 'Wheel chocks (for trucks and buses (at least two))' %}</td>
+                  <td>{{form.wheel_chocks_mark}}</td>
+                  <td>{{form.wheel_chocks_comment}}</td>
+                </tr>
+                <tr>
+                  <td>5.7</td>
+                  <td>{% trans 'Communication (phones, walkie-talkie)' %}</td>
+                  <td>{{form.phone_mark}}</td>
+                  <td>{{form.phone_comment}}</td>
+                </tr>
+                <tr>
+                  <td>5.8</td>
+                  <td>{% trans 'Reflective vest' %}</td>
+                  <td>{{form.vest_mark}}</td>
+                  <td>{{form.vest_comment}}</td>
+                </tr>
+                <tr>
+                  <td class="correction">5.9</td>
+                  <td>{% trans 'Flagpole installed' %}</td>
+                  <td>{{form.flagpole_mark}}</td>
+                  <td>{{form.flagpole_comment}}</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="circle">6</div>
+                  </td>
+                  <td class="table-info" colspan="3">{% trans 'Documentation' %}</td>
+                </tr>
+                <tr>
+                  <td>6.1</td>
+                  <td>{% trans "Driver's license, safety certificate" %}</td>
+                  <td>{{form.driver_license_mark}}</td>
+                  <td>{{form.driver_license_comment}}</td>
+                </tr>
+                <tr>
+                  <td>6.2</td>
+                  <td>{% trans 'Documents for the car' %}</td>
+                  <td>{{form.car_docs_mark}}</td>
+                  <td>{{form.car_docs_comment}}</td>
+                </tr> 
+                {% block additional %}
+                {% endblock %}
+                <tr>
+                  <td class="table-info" colspan="4">{% trans 'Corrective actions' %}</td>
+                </tr>
+                <tr>  
+                  <td colspan="4">{{form.comments}}</td>
+                </tr>
+                <tr>
+                  <td class="table-info" colspan="2">{% trans 'Form filled out by user'%}</td>
+                  <td colspan="2">{{user.first_name}} {{user.last_name}}</td>
+                </tr>
+
+        </table>
+    </div>
+  </div>
+ 
+  <div class="d-grid gap-2 col-6 mx-auto mb-5">
+    <button type="submit" class="btn btn-primary mx-auto">{% trans 'Send' %}</button>
+  </div>
+</form>
+
+<script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+<script src="{% static 'js/select2_locale_kk.js'%}"></script>
+{{form.media}}
+
+{% endblock %}

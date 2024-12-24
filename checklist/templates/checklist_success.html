@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %} 
+
+{% block content %}
+  <h2>{% trans "Checklist created successfully!" %}</h2>
+  <br>
+  <div class="container mb-5">
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <a class="btn btn-primary btn-lg" href="{% url 'checklist_select' %}"
+        >{% trans "Add another checklist" %}</a
+      >
+      <a class="btn btn-primary btn-lg" href="{% url 'index' %}"
+        >{% trans "Return to homepage" %}</a
+      >
+    </div>
+</div>
+{% endblock %}

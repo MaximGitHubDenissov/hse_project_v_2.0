@@ -1,0 +1,252 @@
+{% extends 'checklist_form.html' %}
+{% load i18n %}
+{% load static %} 
+
+{% block heading %}
+<h1 class="text-center">{% trans 'Dangerous cargo checklist' %} </h1>
+{% endblock %}
+
+{% block additional %}
+<tr>
+    <td>
+      <div class="circle">7</div>
+    </td>
+    <td class="table-info" colspan="3">{% trans 'Documents and accessories' %}</td>
+</tr>
+<tr>
+  <td>7.1</td>
+  <td>{% trans 'Approval of a vehicle for transportation of dangerous cargo' %}</td>
+  <td>{{form.vehicle_approval_mark}}</td>
+  <td>{{form.vehicle_approval_comment}}</td>
+</tr>
+<tr>
+  <td>7.2</td>
+  <td>{% trans 'Driver permission to transport dangerous cargo' %}</td>
+  <td>{{form.driver_approval_mark}}</td>
+  <td>{{form.driver_approval_comment}}</td>
+</tr>
+<tr>
+  <td>7.3</td>
+  <td>{% trans 'License card for transportation of dangerous cargo' %}</td>
+  <td>{{form.license_card_mark}}</td>
+  <td>{{form.license_card_comment}}</td>
+</tr>
+<tr>
+  <td>7.4</td>
+  <td>{% trans "Driver's instructions" %}</td>
+  <td>{{form.driver_instruction_mark}}</td>
+  <td>{{form.driver_instruction_comment}}</td>
+</tr>
+<tr>
+  <td>7.5</td>
+  <td>{% trans 'Emergency plan' %}</td>
+  <td>{{form.emergency_plan_mark}}</td>
+  <td>{{form.emergency_plan_comment}}</td>
+</tr>
+<tr>
+  <td>7.6</td>
+  <td>{% trans 'Consignment note' %}</td>
+  <td>{{form.waybill_mark}}</td>
+  <td>{{form.waybill_comment}}</td>
+</tr>
+<tr>
+  <td>7.7</td>
+  <td>{% trans 'Addresses, telephone numbers of the carrier, shipper and recipient' %}</td>
+  <td>{{form.contacts_mark}}</td>
+  <td>{{form.contacts_comment}}</td>
+</tr>
+<tr>
+  <td>7.8</td>
+  <td>{% trans 'Form for the transportation of dangerous goods of classes 3, 5, 7 and 8' %}</td>
+  <td>{{form.transportation_form_mark}}</td>
+  <td>{{form.transportation_form_comment}}</td>
+</tr>
+<tr>
+  <td>7.9</td>
+  <td>{% trans 'Waybill marked “Dangerous cargo”' %}</td>
+  <td>{{form.danger_waybill_mark}}</td>
+  <td>{{form.danger_waybill_comment}}</td>
+</tr>
+<tr>
+  <td>7.10</td>
+  <td>{% trans 'Danger signs' %}</td>
+  <td>{{form.danger_signs_mark}}</td>
+  <td>{{form.danger_signs_comment}}</td>
+</tr>
+<tr>
+  <td>7.10</td>
+  <td>{% trans '"No Entry" sign (2 pcs)' %}</td>
+  <td>{{form.no_entry_sign_mark}}</td>
+  <td>{{form.no_entry_sign_comment}}</td>
+</tr>
+<tr>
+  <td>7.11</td>
+  <td>{% trans 'Signal tape and metal pins (4 pcs)' %}</td>
+  <td>{{form.signal_tape_mark}}</td>
+  <td>{{form.signal_tape_comment}}</td>
+</tr>
+<tr>
+  <td>
+    <div class="circle">8</div>
+  </td>
+  <td class="table-info" colspan="3">{% trans 'Sulfuric acid, desorbate or ammonia water' %}</td>
+</tr>
+<tr>
+  <td>8.1</td>
+  <td>{% trans 'Special PPE for acid' %}</td>
+  <td>{{form.acid_ppe_mark}}</td>
+  <td>{{form.acid_ppe_comment}}</td>
+</tr>
+<tr>
+  <td>8.2</td>
+  <td>{% trans 'Valves pressure status' %}</td>
+  <td>{{form.valves_pressure_mark}}</td>
+  <td>{{form.valves_pressure_comment}}</td>
+</tr>
+<tr>
+  <td>8.3</td>
+  <td>{% trans 'Condition of valves for leakage, presence of plugs' %}</td>
+  <td>{{form.valves_leakage_mark}}</td>
+  <td>{{form.valves_leakage_comment}}</td>
+</tr>
+<tr>
+  <td>8.4</td>
+  <td>{% trans 'Condition of the hatch and environmental box' %}</td>
+  <td>{{form.hatch_mark}}</td>
+  <td>{{form.hatch_comment}}</td>
+</tr>
+<tr>
+  <td>8.5</td>
+  <td>{% trans 'Level sensor status' %}</td>
+  <td>{{form.level_sensor_mark}}</td>
+  <td>{{form.level_sensor_comment}}</td>
+</tr>
+<tr>
+  <td>8.6</td>
+  <td>{% trans 'Condition of drainage tubes' %}</td>
+  <td>{{form.drainage_mark}}</td>
+  <td>{{form.drainage_comment}}</td>
+</tr>
+<tr>
+  <td>8.7</td>
+  <td>{% trans 'Condition of the ladder and hatch platform' %}</td>
+  <td>{{form.ladder_mark}}</td>
+  <td>{{form.ladder_comment}}</td>
+</tr>
+<tr>
+  <td>8.8</td>
+  <td>{% trans 'Clean water (10 l) and eye wash' %}</td>
+  <td>{{form.water_mark}}</td>
+  <td>{{form.water_comment}}</td>
+</tr>
+<tr>
+  <td>8.9</td>
+  <td>{% trans '2.5% soda solution (10 l)' %}</td>
+  <td>{{form.soda_mark}}</td>
+  <td>{{form.soda_comment}}</td>
+</tr>
+<tr>
+  <td>8.10</td>
+  <td>{% trans 'Radiation hazard signs (4 pcs)' %}</td>
+  <td>{{form.radiation_signs_mark}}</td>
+  <td>{{form.radiation_signs_comment}}</td>
+</tr>
+
+<tr>
+  <td>
+    <div class="circle">9</div>
+  </td>
+  <td class="table-info" colspan="3">{% trans 'Ammonium diuranate' %}</td>
+</tr>
+<tr>
+  <td>9.1</td>
+  <td>{% trans 'Container ship cam mount condition' %}</td>
+  <td>{{form.mount_mark}}</td>
+  <td>{{form.mount_comment}}</td>
+</tr>
+<tr>
+  <td>9.2</td>
+  <td>{% trans 'Radiation hazard signs (4 pcs)' %}</td>
+  <td>{{form.ammonium_rad_signs_mark}}</td>
+  <td>{{form.ammonium_rad_signs_comment}}</td>
+</tr>
+<tr>
+  <td>9.3</td>
+  <td>{% trans 'Condition of TUK-118 fastenings' %}</td>
+  <td>{{form.tuk_fastenings_mark}}</td>
+  <td>{{form.tuk_fastenings_comment}}</td>
+</tr>
+<tr>
+  <td>
+    <div class="circle">10</div>
+  </td>
+  <td class="table-info" colspan="3">{% trans 'Ammonium nitrate' %}</td>
+</tr>
+<tr>
+  <td>10.1</td>
+  <td>{% trans 'Presence of a canopy' %}</td>
+  <td>{{form.canopy_mark}}</td>
+  <td>{{form.canopy_comment}}</td>
+</tr>
+<tr>
+  <td>10.2</td>
+  <td>{% trans 'Cargo condition (damage, contamination with oil products)' %}</td>
+  <td>{{form.cargo_condition_mark}}</td>
+  <td>{{form.cargo_condition_comment}}</td>
+</tr>
+<tr>
+  <td>10.3</td>
+  <td>{% trans 'Car body cleanliness' %}</td>
+  <td>{{form.cleanliness_mark}}</td>
+  <td>{{form.cleanliness_comment}}</td>
+</tr>
+<tr>
+  <td>10.4</td>
+  <td>{% trans 'Condition of the exhaust pipe and spark arrestor' %}</td>
+  <td>{{form.exhaust_pipe_mark}}</td>
+  <td>{{form.exhaust_pipe_comment}}</td>
+</tr>
+<tr>
+  <td>
+    <div class="circle">11</div>
+  </td>
+  <td class="table-info" colspan="3">{% trans 'Fuels and lubricants' %}</td>
+</tr>
+<tr>
+  <td>11.1</td>
+  <td>{% trans 'Condition of the sleeves' %}</td>
+  <td>{{form.sleeves_mark}}</td>
+  <td>{{form.sleeves_comment}}</td>
+</tr>
+<tr>
+  <td>11.2</td>
+  <td>{% trans 'Condition of valves for leaks' %}</td>
+  <td>{{form.oil_valves_leakage_mark}}</td>
+  <td>{{form.oil_valves_leakage_comment}}</td>
+</tr>
+<tr>
+  <td>11.3</td>
+  <td>{% trans 'Condition of the hatch and environmental box' %}</td>
+  <td>{{form.oil_hatch_mark}}</td>
+  <td>{{form.oil_hatch_comment}}</td>
+</tr>
+<tr>
+  <td>11.4</td>
+  <td>{% trans 'Condition of the ladder and hatch platform' %}</td>
+  <td>{{form.oil_ladder_mark}}</td>
+  <td>{{form.oil_ladder_comment}}</td>
+</tr>
+<tr>
+  <td>11.5</td>
+  <td>{% trans 'Fire blanket and sand' %}</td>
+  <td>{{form.blanket_mark}}</td>
+  <td>{{form.blanket_comment}}</td>
+</tr>
+<tr>
+  <td>11.6</td>
+  <td>{% trans 'Grounding wedge and metal chain at the rear of the tank' %}</td>
+  <td>{{form.chain_mark}}</td>
+  <td>{{form.chain_comment}}</td>
+</tr>
+
+{% endblock %}
