@@ -102,7 +102,7 @@ DATABASES = {
         'HOST': 'denissovtestserver.mysql.pythonanywhere-services.com',
         'OPTIONS':{
             'init_command': "SET_NAMES 'utf8mb4';SET sql_mode='STRICT_TRANS_TABLES'",
-            'charset': 'urf8mb4',
+            'charset': 'utf8mb4',
         },
     }
 }
